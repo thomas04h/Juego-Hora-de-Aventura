@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Selecciona tu Personaje</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+  <h1 class="titulo">Selecciona tu Personaje</h1>
+  <div style="text-align: center; margin-top: -20px;">
+  <img id="btn-volumen" src="img/iconodemusica.png" alt="Volumen" style="width: 40px; cursor: pointer;" onclick="toggleMusica()">
+</div>
+<audio id="musica-fondo" loop>
+  <source src="audio/Nintendub.mp3" type="audio/mpeg">
+</audio>
+
+
+  <div class="personajes">
+    <div class="personaje-container">
+      <img id="p1" src="imagenesseleccion/personajes/jake.png" onclick="seleccionarPersonaje(1)">
+      <div class="personaje-nombre">Jake</div>
+      <p class="descripcion">El perro elástico más leal del reino.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta1.jfif">
+        <img src="Cartas/Carta2.jfif">
+        <img src="Cartas/Carta3.jfif">
+        <img src="Cartas/Support1.jfif">
+        <img src="Cartas/Support2.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p2" src="imagenesseleccion/personajes/fin.png" onclick="seleccionarPersonaje(2)">
+      <div class="personaje-nombre">Fin</div>
+      <p class="descripcion">El humano aventurero con corazón valiente.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta4.jfif">
+        <img src="Cartas/Carta5.jfif">
+        <img src="Cartas/Carta6.jfif">
+        <img src="Cartas/Support3.jfif">
+        <img src="Cartas/Support4.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p3" src="imagenesseleccion/personajes/dulceprincesa.png" onclick="seleccionarPersonaje(3)">
+      <div class="personaje-nombre">Dulce Princesa</div>
+      <p class="descripcion">Reina científica del Dulce Reino.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta7.jfif">
+        <img src="Cartas/Carta8.jfif">
+        <img src="Cartas/Carta9.jfif">
+        <img src="Cartas/Support5.jfif">
+        <img src="Cartas/Support6.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p4" src="imagenesseleccion/personajes/marceline.png" onclick="seleccionarPersonaje(4)">
+      <div class="personaje-nombre">Marceline</div>
+      <p class="descripcion">La reina vampiro con alma de rockera.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta10.jfif">
+        <img src="Cartas/Carta1.jfif">
+        <img src="Cartas/Carta2.jfif">
+        <img src="Cartas/Support7.jfif">
+        <img src="Cartas/Support8.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p5" src="imagenesseleccion/personajes/bmo.png" onclick="seleccionarPersonaje(5)">
+      <div class="personaje-nombre">BMO</div>
+      <p class="descripcion">Pequeña consola con corazón enorme.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta3.jfif">
+        <img src="Cartas/Carta4.jfif">
+        <img src="Cartas/Carta5.jfif">
+        <img src="Cartas/Support9.jfif">
+        <img src="Cartas/Support10.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p6" src="imagenesseleccion/personajes/princesaflama.png" onclick="seleccionarPersonaje(6)">
+      <div class="personaje-nombre">Princesa Flama</div>
+      <p class="descripcion">Poder y fuego unidos en nobleza.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta6.jfif">
+        <img src="Cartas/Carta7.jfif">
+        <img src="Cartas/Carta8.jfif">
+        <img src="Cartas/Support1.jfif">
+        <img src="Cartas/Support2.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p7" src="imagenesseleccion/personajes/liche.png" onclick="seleccionarPersonaje(7)">
+      <div class="personaje-nombre">Caracol</div>
+      <p class="descripcion">No te dejes engañar por su aspecto...</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta9.jfif">
+        <img src="Cartas/Carta10.jfif">
+        <img src="Cartas/Carta1.jfif">
+        <img src="Cartas/Support3.jfif">
+        <img src="Cartas/Support4.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p8" src="imagenesseleccion/personajes/reyhelado.png" onclick="seleccionarPersonaje(8)">
+      <div class="personaje-nombre">Rey Helado</div>
+      <p class="descripcion">Frío, solitario y... algo excéntrico.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta2.jfif">
+        <img src="Cartas/Carta3.jfif">
+        <img src="Cartas/Carta4.jfif">
+        <img src="Cartas/Support5.jfif">
+        <img src="Cartas/Support6.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p9" src="imagenesseleccion/personajes/mentita.png" onclick="seleccionarPersonaje(9)">
+      <div class="personaje-nombre">Mentita</div>
+      <p class="descripcion">El asistente leal de la Dulce Princesa.</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta5.jfif">
+        <img src="Cartas/Carta6.jfif">
+        <img src="Cartas/Carta7.jfif">
+        <img src="Cartas/Support7.jfif">
+        <img src="Cartas/Support8.jfif">
+      </div>
+    </div>
+
+    <div class="personaje-container">
+      <img id="p10" src="imagenesseleccion/personajes/gunter.png" onclick="seleccionarPersonaje(10)">
+      <div class="personaje-nombre">Gunter</div>
+      <p class="descripcion">¿El pingüino más raro del multiverso?</p>
+      <div class="personaje-cartas">
+        <img src="Cartas/Carta8.jfif">
+        <img src="Cartas/Carta9.jfif">
+        <img src="Cartas/Carta10.jfif">
+        <img src="Cartas/Support9.jfif">
+        <img src="Cartas/Support10.jfif">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function seleccionarPersonaje(id) {
+      localStorage.setItem("personajeSeleccionado", id);
+      const enemigo = Math.floor(Math.random() * 10) + 1;
+      localStorage.setItem("enemigoSeleccionado", enemigo === id ? (enemigo % 10) + 1 : enemigo);
+      window.location.href = "zonadebatalla.html";
+    }
+  </script>
+<script>
+  const botonVolumen = document.getElementById('btn-volumen');
+  const musica = document.getElementById('musica-fondo');
+  let reproduciendo = false;
+
+  function toggleMusica() {
+    if (!reproduciendo) {
+      musica.play();
+      botonVolumen.src = 'img/iconodemusica.png';
+    } else {
+      musica.pause();
+      botonVolumen.src = 'img/iconodemute.png';
+    }
+    reproduciendo = !reproduciendo;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('img/portada2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Rubik Mono One', sans-serif;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contenedor principal */
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Título animado */
+.game-title {
+  font-size: 36px;
+  color: #ffcc00;
+  text-shadow:
+    0 0 5px #000000,
+    0 0 10px #000000,
+    0 0 20px #000000,
+    0 0 30px #000000;
+  margin: 0;
+  animation: glow 2s ease-in-out infinite alternate,
+             move-title 2s ease-in-out infinite;
+}
+
+/* Subtítulo animado */
+.subtitle {
+  font-size: 18px;
+  color: #ffcc00;
+  text-shadow:
+    0 0 5px #000000,
+    0 0 10px #000000,
+    0 0 20px #000000,
+    0 0 30px #000000;
+  margin: 0;
+  animation: glow-sub 2s ease-in-out infinite alternate,
+             bounce-subtitle 2s ease-in-out infinite;
+}
+
+/* Brillo del título */
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px #000000,
+      0 0 10px #000000,
+      0 0 20px #000000,
+      0 0 30px #000000;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #ffffff,
+      0 0 60px #ffffff;
+  }
+}
+
+/* Brillo del subtítulo */
+@keyframes glow-sub {
+  0% {
+    text-shadow:
+      0 0 5px #000000,
+      0 0 10px #000000,
+      0 0 20px #000000,
+      0 0 30px #000000;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #ffffff,
+      0 0 60px #ffffff;
+  }
+}
+
+/* Movimiento horizontal del título */
+@keyframes move-title {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Movimiento vertical del subtítulo */
+@keyframes bounce-subtitle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+
+/* Animación del botón jugar */
+@keyframes move-button {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.start-image-button {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+  animation: move-button 2s ease-in-out infinite;
+}
+
+.start-image-button:hover {
+  transform: scale(1.05);
+}
+
+/* Botón de música */
+.music-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.music-button:hover {
+  transform: scale(1.2);
+}
+
+/* Imagen superior izquierda */
+.logo-top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: auto;
+  z-index: 1000;
+}
+
+/* Imagen inferior derecha */
+.bottom-right-img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  height: auto;
+  z-index: 1000;
+}
+.project-members {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  color: #ffffff;
+  font-family: 'Rubik Mono One', sans-serif;
+  z-index: 500;
+}
+
+.project-members ul {
+  list-style: none;
+  margin: 5px 0 0;
+  padding: 0;
+}
+
+.project-members li {
+  margin: 2px 0;
+}
+@media (max-width: 480px) {
+  .game-title { font-size: 24px; }
+  .subtitle { font-size: 14px; }
+  .start-image-button { width: 150px; }
+  .logo-top-left, .bottom-right-img { width: 100px; }
+}

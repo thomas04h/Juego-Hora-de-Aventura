@@ -1,0 +1,44 @@
+/* Fondo de video */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Fuente general */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Mono One', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcc00;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Texto centrado */
+.loading-container {
+  text-align: center;
+  color: #ffcc00;
+}
+
+.loading-text {
+  font-size: 24px;
+  animation: blink 1s infinite;
+}
+
+/* Parpadeo */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cargando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuente Rubik Mono One -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carga.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+  <!-- Video de fondo sin loop para que pueda detectar el final -->
+  <video autoplay muted id="background-video">
+    <source src="video/pantalladecarga.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Texto de carga -->
+  <div class="loading-container">
+    <div class="loading-text">Cargando juego...</div>
+  </div>
+
+  <!-- Redirección al terminar el video -->
+  <script>
+    const video = document.getElementById('background-video');
+    video.addEventListener('ended', () => {
+      window.location.href = 'seleccion.html';
+    });
+
+    // Por si el navegador no dispara el evento ended correctamente (fallback)
+    setTimeout(() => {
+      window.location.href = 'seleccion.html';
+    }, 6000); // redirección de respaldo tras 10 segundos
+  </script>
+</body>
+</html>

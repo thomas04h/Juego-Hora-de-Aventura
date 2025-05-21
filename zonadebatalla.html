@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Cartas - Campo de Batalla</title>
+  <link rel="stylesheet" href="estiloszonadebatalla.css">
+  <link rel="stylesheet" href="animaciones_cartas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+
+</head>
+<body>
+  <div class="game-container">
+   <div class="player-section bot">
+  <div class="nombre-personaje" id="nombre-bot">BOT</div>
+  <img src="bot.jpg" class="profile-img" alt="Bot">
+  <div class="life-bar">
+    <div id="bot-life" class="life" style="width: 100%;"></div>
+    <span id="bot-life-text">50</span>
+  </div>
+  <div id="bot-hand" class="hand"></div>
+</div>
+
+
+    <div id="battlefield" class="battlefield"></div>
+
+    <div class="controls">
+      <button id="draw-card">Robar Carta</button>
+      <button id="battle-mode">Modo Batalla</button>
+      <button id="end-turn">Finalizar Turno</button>
+    </div>
+
+    <div class="player-section">
+  <div class="nombre-personaje" id="nombre-jugador">Jugador</div>
+  <img src="player.jpg" class="profile-img" alt="Jugador">
+  <div class="life-bar">
+    <div id="player-life" class="life" style="width: 100%;"></div>
+    <span id="player-life-text">50</span>
+  </div>
+  <div id="player-hand" class="hand"></div>
+</div>
+
+  </div>
+<div id="btn-volumen-wrapper">
+  <img id="btn-volumen" src="img/iconodemusica.png" alt="Volumen" onclick="toggleMusica()">
+</div>
+
+<audio id="musica-fondo" loop>
+  <source src="audio/Adventure Time OST - A New Dimension.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+  <script src="scriptzonadebatalla.js"></script>
+  <script src="cartas_support.js"></script> <!-- debe ir después -->
+  <script>
+  const botonVolumen = document.getElementById('btn-volumen');
+  const musica = document.getElementById('musica-fondo');
+  let reproduciendo = false;
+
+  function toggleMusica() {
+    if (!reproduciendo) {
+      musica.play();
+      botonVolumen.src = 'img/iconodemusica.png';
+    } else {
+      musica.pause();
+      botonVolumen.src = 'img/iconodemute.png';
+    }
+    reproduciendo = !reproduciendo;
+  }
+</script>
+
+</body>
+</html>

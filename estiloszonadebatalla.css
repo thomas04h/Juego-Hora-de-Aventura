@@ -1,0 +1,319 @@
+/* ==== GENERAL ==== */
+body {
+  background-image: url('imagenesseleccion/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Rubik Mono One', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+
+/* ==== CONTENEDOR GENERAL ==== */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ==== SECCIONES DE JUGADOR Y BOT ==== */
+.player-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.player-section.bot {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* ==== IMAGEN DE PERFIL ==== */
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  outline: 3px solid #ffd700;
+  background-color: #fff;
+  background-image: url('../imagenesseleccion/personajes/fin.png'); /* o por JS dinámico */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 10px #ff0040, 0 0 6px #ffd700 inset;
+  object-fit: contain; /* solo si usas <img> */
+}
+
+
+.profile-img:hover {
+  transform: scale(1.08);
+}
+
+/* ==== NOMBRE DE PERSONAJE ==== */
+.nombre-personaje {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc00;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+/* ==== BARRAS DE VIDA ==== */
+.life-bar {
+  position: relative;
+  width: 160px;
+  height: 24px;
+  background-color: #001f33;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 6px #ffcc00, inset 0 0 6px #002244;
+  image-rendering: pixelated;
+  border-radius: 6px;
+}
+
+.life {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff0040,
+    #ff0040 6px,
+    #ff0040 6px,
+    #ff0040 12px
+  );
+  transition: width 0.3s ease;
+  border-radius: 4px 0 0 4px;
+}
+
+.life-bar span {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  top: 2px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  pointer-events: none;
+}
+
+
+/* ==== CAMPO DE BATALLA ==== */
+.battlefield {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: repeat(4, 120px);
+  gap: 6px;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+}
+
+.cell {
+  background: #333;
+  border: 2px solid #00bfff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px #000;
+}
+
+/* ==== CARTAS ==== */
+.hand {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 60px;
+  height: 90px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: grab;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* ==== CONTENEDOR DE CARTA Y ETIQUETAS ==== */
+.card-container {
+  position: relative;
+  width: 60px;
+  height: 90px;
+}
+
+.attack-label, .defense-label {
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.attack-label {
+  top: 0;
+  left: 0;
+  background-color: red;
+}
+
+.defense-label {
+  bottom: 0;
+  right: 0;
+  background-color: blue;
+}
+
+/* ==== BOTÓN DE ATAQUE ==== */
+.attack-button {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 10px;
+  padding: 2px 5px;
+  background-color: orange;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ==== BOTONES DE CONTROL ==== */
+.controls button {
+  padding: 10px 16px;
+  font-size: 12px;
+  background: #222;
+  color: #fff;
+  border: 2px solid #ff0040;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #cc0022(0, 191, 255, 0.4);
+}
+
+.controls button:hover {
+  background-color: #444;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+/* ==== EFECTOS VISUALES ==== */
+.visual-efecto {
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: destello 0.6s ease-out;
+  z-index: 999;
+}
+
+@keyframes destello {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+.shake {
+  animation: shakeEffect 0.4s;
+}
+
+@keyframes shakeEffect {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ==== VICTORIA/DERROTA ==== */
+.pantalla-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.pantalla-final.victoria {
+  background: radial-gradient(circle, rgba(40,167,69,0.9), rgba(0,0,0,0.95));
+}
+
+.pantalla-final.derrota {
+  background: radial-gradient(circle, rgba(220,53,69,0.9), rgba(0,0,0,0.95));
+}
+
+.pantalla-final button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pantalla-final button:hover {
+  background-color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+#btn-volumen-wrapper {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#btn-volumen {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#btn-volumen:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 480px) {
+  .battlefield {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(5, 90px);
+    gap: 4px;
+  }
+
+  .profile-img { width: 60px; height: 60px; }
+  .life-bar { width: 120px; height: 18px; }
+  .nombre-personaje { font-size: 12px; }
+}

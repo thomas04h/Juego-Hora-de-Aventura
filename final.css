@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: 'Rubik Mono One', sans-serif;
+  background: radial-gradient(circle, rgba(0,0,0,0.95), rgba(20,20,20,0.9));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+#pantalla-final {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+#mensaje-final {
+  font-size: 36px;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+button {
+  padding: 16px 40px;
+  font-size: 14px;
+  font-family: 'Press Start 2P', monospace;
+  background: linear-gradient(145deg, #ffe066, #ffcc00);
+  border: 2px solid #ffaa00;
+  color: #000;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px #b38f00;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #fff26e, #ffd700);
+  transform: scale(1.05);
+  box-shadow: 0 6px #b38f00;
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px #b38f00;
+}
+
+#btn-volumen-wrapper {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#btn-volumen {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#btn-volumen:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 480px) {
+  #mensaje-final { font-size: 24px; }
+  button { padding: 12px 20px; font-size: 12px; }
+}

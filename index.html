@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hora de Luchar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+</head>
+<body>
+
+  <!-- Imagen superior izquierda: Adventure Time -->
+  <img src="img/horadeaventura.png" alt="Logo Adventure Time" class="logo-top-left" />
+
+  <div class="cover-container">
+    <h1 class="game-title">Hora de Luchar</h1>
+    <p class="subtitle">¡Batalla de Ooo!</p>
+
+    <div class="button-group">
+      <img
+        src="img/jugar.png"
+        alt="Botón Jugar"
+        class="start-image-button"
+        onclick="window.location.href = 'pantalladecarga.html';"
+      />
+
+      <img
+        id="music-icon"
+        src="img/iconodemusica.png"
+        alt="Botón Música"
+        class="music-button"
+        onclick="toggleMusic()"
+      />
+    </div>
+  </div>
+
+  <!-- Audio de fondo -->
+  <audio id="background-music" loop>
+    <source src="audio/Super Adventure Land.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Imagen inferior derecha: Finn y Jake -->
+  <img src="img/pajarosgordos.png" alt="Finn y Jake abajo" class="bottom-right-img" />
+
+  <script src="scripts.js"></script>
+</body>
+<div class="project-members">
+  <p>Hecho por:</p>
+  <ul>
+    <li>Thomás Martinez Ávila</li>
+    <li>Manuela Nárvaez Ávila</li>
+  </ul>
+</div>
+
+</html>

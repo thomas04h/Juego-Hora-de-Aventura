@@ -1,0 +1,64 @@
+
+/* Animaciones por carta */
+@keyframes attackCarta1 {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) translateY(-10px); }
+  100% { transform: scale(1); }
+}
+@keyframes attackCarta2 {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg) translateY(-10px); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes attackCarta3 {
+  0% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.3) rotate(10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+@keyframes attackCarta4 {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 1; }
+}
+@keyframes attackCarta5 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+@keyframes attackCarta6 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+@keyframes attackCarta7 {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1) translateX(10px); }
+  100% { transform: scale(1); }
+}
+@keyframes attackCarta8 {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-10deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes attackCarta9 {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25) translateY(-5px); }
+  100% { transform: scale(1); }
+}
+@keyframes attackCarta10 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px) scale(1.3); }
+  100% { transform: translateY(0); }
+}
+
+/* Aplicar a clases específicas */
+.attack-Carta1 { animation: attackCarta1 0.6s ease; }
+.attack-Carta2 { animation: attackCarta2 0.6s ease; }
+.attack-Carta3 { animation: attackCarta3 0.6s ease; }
+.attack-Carta4 { animation: attackCarta4 0.6s ease; }
+.attack-Carta5 { animation: attackCarta5 0.6s ease; }
+.attack-Carta6 { animation: attackCarta6 0.6s ease; }
+.attack-Carta7 { animation: attackCarta7 0.6s ease; }
+.attack-Carta8 { animation: attackCarta8 0.6s ease; }
+.attack-Carta9 { animation: attackCarta9 0.6s ease; }
+.attack-Carta10 { animation: attackCarta10 0.6s ease; }

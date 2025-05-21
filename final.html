@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado Final</title>
+  <link rel="stylesheet" href="final.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Botón de volumen en esquina superior derecha -->
+  <div id="btn-volumen-wrapper">
+    <img id="btn-volumen" src="img/iconodemusica.png" alt="Volumen" onclick="toggleMusica()">
+  </div>
+
+  <!-- Contenedor principal -->
+  <div id="pantalla-final">
+    <h1 id="mensaje-final">Resultado</h1>
+    <button onclick="volverAJugar()">Volver a jugar</button>
+    <audio id="audio-final" src="audio/Come Along With Me.  Hora de Aventura.  Sub Al Español..mp3" autoplay loop></audio>
+  </div>
+
+  <script src="final.js"></script>
+</body>
+</html>
